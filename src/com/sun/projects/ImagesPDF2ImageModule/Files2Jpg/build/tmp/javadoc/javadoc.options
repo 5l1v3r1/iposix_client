@@ -1,0 +1,7 @@
+-classpath 'E:\\Users\\B249461\\Documents\\Elektra\\projects\\ImagesPDF2ImageModule\\Files2Jpg\\build\\classes\\main;E:\\Users\\B249461\\Documents\\Elektra\\projects\\ImagesPDF2ImageModule\\Files2Jpg\\build\\resources\\main;E:\\Users\\B249461\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.pdfbox\\pdfbox\\1.8.7\\1f149ab0d354095ec4ae18d9fdb2373c3348b11b\\pdfbox-1.8.7.jar;E:\\Users\\B249461\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.pdfbox\\fontbox\\1.8.7\\58a9aef97730a0b0a3c1a55ffeaecd1d737d942b\\fontbox-1.8.7.jar;E:\\Users\\B249461\\.gradle\\caches\\modules-2\\files-2.1\\org.apache.pdfbox\\jempbox\\1.8.7\\423144f2fdca094bc88a0050bd256f78dc1e6e27\\jempbox-1.8.7.jar;E:\\Users\\B249461\\.gradle\\caches\\modules-2\\files-2.1\\commons-logging\\commons-logging\\1.1.1\\5043bfebc3db072ed80fbd362e7caf00e885d8ae\\commons-logging-1.1.1.jar'
+-d 'E:\\Users\\B249461\\Documents\\Elektra\\projects\\ImagesPDF2ImageModule\\Files2Jpg\\build\\docs\\javadoc'
+-doctitle 'Files2jpg API'
+-encoding 'UTF-8'
+-quiet 
+-windowtitle 'Files2jpg API'
+'E:\\Users\\B249461\\Documents\\Elektra\\projects\\ImagesPDF2ImageModule\\Files2Jpg\\src\\main\\java\\com\\sun\\xinto\\Pdf2Jpg.java'

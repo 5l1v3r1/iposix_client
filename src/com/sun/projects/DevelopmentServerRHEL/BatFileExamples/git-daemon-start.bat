@@ -1,0 +1,1 @@
+git daemon --base-path=c:/repositories --export-all --enable=receive-pack

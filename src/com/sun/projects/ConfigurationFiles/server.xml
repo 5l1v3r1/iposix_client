@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Server>
+  <Listener className="org.apache.catalina.core.AprLifecycleListener"/>
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener"/>
+  <Listener className="org.apache.catalina.storeconfig.StoreConfigLifecycleListener"/>
+  <Listener className="org.apache.catalina.mbeans.ServerLifecycleListener"/>
+  <GlobalNamingResources>
+    <Environment
+      name="simpleValue"
+      type="java.lang.Integer"
+      value="30"/>
+<Resource auth="Container"
+      name="jdbc/imax221"
+      type="javax.sql.DataSource"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+            url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      username="USRIMAX"
+      password="USRIMAX2012"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      validationInterval="30000"
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      logAbandoned="true"
+      minIdle="3"
+      maxIdle="9"
+      testWhileIdle="true"
+      timeBetweenEvictionRunsMillis="300000"
+      numTestsPerEvictionRun="3"
+      minEvictableIdleTimeMillis="210000" 
+      maxWait="5000"
+      maxActive="30"/>
+
+    <Resource auth="Container"
+      name="jdbc/imax223"
+      type="javax.sql.DataSource"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+            url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      username="USRIMAX"
+      password="USRIMAX2012"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      validationInterval="30000"
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      logAbandoned="true"
+      minIdle="3"
+      maxIdle="9"
+      testWhileIdle="true"
+      timeBetweenEvictionRunsMillis="300000"
+      numTestsPerEvictionRun="3"
+      minEvictableIdleTimeMillis="210000"
+      maxWait="5000"
+      maxActive="30"/>
+
+    <Resource
+      auth="Container"
+      description="User database that can be updated and saved"
+      name="UserDatabase"
+      type="org.apache.catalina.UserDatabase"
+      pathname="conf/tomcat-users.xml"
+      factory="org.apache.catalina.users.MemoryUserDatabaseFactory"/>
+    <Resource
+      name="jdbc/imax65"
+      type="javax.sql.DataSource"
+      password="USRIMAX2012"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      maxIdle="5"
+      maxWait="-1"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      username="USRIMAX"
+      url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      auth="Container"	
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      maxActive="10"/>
+   
+     <Resource
+      name="jdbc/digweb64"
+      type="javax.sql.DataSource"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      username="USRDIGWEB"
+      password="USRDIGWEB"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      connectionTimeout="30000"
+      validationInterval="30000"
+      removeAbandoned="true"
+      removeAbandonedTimeout="30"
+      logAbandoned="false"
+      maxIdle="5"
+      maxAge="10000"
+      testWhileIdle="true"
+      timeBetweenEvictionRunsMillis="30000"
+      numTestsPerEvictionRun="3"
+      minEvictableIdleTimeMillis="30000"
+      maxWait="5000"
+      maxActive="80"/>
+
+    <Resource
+      name="jdbc/imaxbal"
+      type="javax.sql.DataSource"
+      password="USRIMAX2012"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      maxIdle="5"
+      maxWait="-1"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      username="USRIMAX"
+      url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      auth="Container"	
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      maxActive="10"/>
+    <Resource
+      name="jdbc/digweb65"
+      type="javax.sql.DataSource"
+      password="USRDIGWEB"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      maxIdle="5"
+      maxWait="-1"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      username="USRDIGWEB"
+      url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      auth="Container"	
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      maxActive="10"/>
+<Resource auth="Container"
+      name="jdbc/digweb223"
+      type="javax.sql.DataSource"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+            url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      username="USRDIGWEB"
+      password="USRDIGWEB"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      validationInterval="30000"
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      logAbandoned="true"
+      minIdle="3"
+      maxIdle="9"
+      testWhileIdle="true"
+      timeBetweenEvictionRunsMillis="300000"
+      numTestsPerEvictionRun="3"
+      minEvictableIdleTimeMillis="210000"
+      maxWait="5000"
+      maxActive="30"/>
+
+
+    <Resource
+      name="jdbc/digwebbal"
+      type="javax.sql.DataSource"
+      password="USRDIGWEB"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      maxIdle="5"
+      maxWait="-1"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      username="USRDIGWEB"
+      url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      auth="Container"	
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      maxActive="10"/>
+    
+<Resource auth="Container"
+      name="jdbc/digweb221"
+      type="javax.sql.DataSource"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+            url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      username="USRDIGWEB"
+      password="USRDIGWEB"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      validationInterval="30000"
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      logAbandoned="true"
+      minIdle="3"
+      maxIdle="9"
+      testWhileIdle="true"
+      timeBetweenEvictionRunsMillis="300000"
+      numTestsPerEvictionRun="3"
+      minEvictableIdleTimeMillis="210000"
+      maxWait="5000"
+      maxActive="30"/>
+
+
+    <Resource
+      name="jdbc/imax64"
+      type="javax.sql.DataSource"
+      password="USRIMAX2012"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      maxIdle="5"
+      maxWait="-1"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      username="USRIMAX"
+      url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      auth="Container"	
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      maxActive="10"/>
+
+<Resource
+      name="jdbc/digcen64"
+      type="javax.sql.DataSource"
+      password="d1g1t4l"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      maxIdle="12"
+      maxWait="-1"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      username="DIGCEN"
+      url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      auth="Container"	
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      maxActive="10"
+      testOnBorrow="true"
+      timeBetweenEvictionRunsMillis="960000"
+      numTestsPerEvictionRun="3" 
+      minEvictableIdleTimeMillis="900000"/>
+
+
+
+<Resource
+      name="jdbc/digcen65"
+      type="javax.sql.DataSource"
+      password="d1g1t4l"
+      driverClassName="oracle.jdbc.driver.OracleDriver"
+      maxIdle="12"
+      maxWait="-1"
+      validationQuery="SELECT SYSDATE FROM DUAL"
+      username="DIGCEN"
+      url="jdbc:oracle:thin:@10.51.230.96:1521:XE"
+      auth="Container"	
+      removeAbandoned="true"
+      removeAbandonedTimeout="60"
+      maxActive="10"
+      testOnBorrow="true"
+      timeBetweenEvictionRunsMillis="960000"
+      numTestsPerEvictionRun="3" 
+      minEvictableIdleTimeMillis="900000"/>
+
+
+
+
+
+  </GlobalNamingResources>
+  <Service
+      name="Catalina">
+    <Connector
+        port="8080"
+        redirectPort="8443"
+        minSpareThreads="25"
+        connectionTimeout="20000"
+        maxThreads="150"
+        maxSpareThreads="75">
+    </Connector>
+    <Connector
+        port="8009"
+        redirectPort="8443"
+        protocol="AJP/1.3">
+    </Connector>
+    <Engine
+        defaultHost="localhost"
+        name="Catalina">
+      <Realm className="org.apache.catalina.realm.UserDatabaseRealm"/>
+      <Host
+          appBase="webapps"
+          name="localhost">
+       
+       <Context
+            path="/pws">
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <ResourceLink
+            global="jdbc/imax223"
+            name="jdbc/imax223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax65"
+            name="jdbc/imax65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/poolimax"
+            name="jdbc/poolimax"
+            type="oracle.jdbc.pool.OracleDataSource"/>
+          <ResourceLink
+            global="jdbc/digweb64"
+            name="jdbc/digweb64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imaxbal"
+            name="jdbc/imaxbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/poolimax1"
+            name="jdbc/poolimax1"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb65"
+            name="jdbc/digweb65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb223"
+            name="jdbc/digweb223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digwebbal"
+            name="jdbc/digwebbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb221"
+            name="jdbc/digweb221"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax64"
+            name="jdbc/imax64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax221"
+            name="jdbc/imax221"
+            type="javax.sql.DataSource"/>
+	<ResourceLink
+            global="jdbc/digcen223"
+            name="jdbc/digcen223"
+            type="javax.sql.DataSource"/>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+        </Context>
+        
+        <Context
+            path="/casaEmp">
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <ResourceLink
+            global="jdbc/imax223"
+            name="jdbc/imax223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax65"
+            name="jdbc/imax65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb64"
+            name="jdbc/digweb64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imaxbal"
+            name="jdbc/imaxbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb65"
+            name="jdbc/digweb65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb223"
+            name="jdbc/digweb223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digwebbal"
+            name="jdbc/digwebbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb221"
+            name="jdbc/digweb221"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax64"
+            name="jdbc/imax64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax221"
+            name="jdbc/imax221"
+            type="javax.sql.DataSource"/>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+        </Context>
+        
+        <Context
+            path="/digWebWsCliProd">
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <ResourceLink
+            global="jdbc/imax223"
+            name="jdbc/imax223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax65"
+            name="jdbc/imax65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/poolimax"
+            name="jdbc/poolimax"
+            type="oracle.jdbc.pool.OracleDataSource"/>
+          <ResourceLink
+            global="jdbc/digweb64"
+            name="jdbc/digweb64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imaxbal"
+            name="jdbc/imaxbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/poolimax1"
+            name="jdbc/poolimax1"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb65"
+            name="jdbc/digweb65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb223"
+            name="jdbc/digweb223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digwebbal"
+            name="jdbc/digwebbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb221"
+            name="jdbc/digweb221"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax64"
+            name="jdbc/imax64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax221"
+            name="jdbc/imax221"
+            type="javax.sql.DataSource"/>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+        </Context>
+             
+        <Context
+            path="/webservicescliente">
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <ResourceLink
+            global="jdbc/imax223"
+            name="jdbc/imax223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax65"
+            name="jdbc/imax65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/poolimax"
+            name="jdbc/poolimax"
+            type="oracle.jdbc.pool.OracleDataSource"/>
+          <ResourceLink
+            global="jdbc/digweb64"
+            name="jdbc/digweb64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imaxbal"
+            name="jdbc/imaxbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/poolimax1"
+            name="jdbc/poolimax1"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb65"
+            name="jdbc/digweb65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb223"
+            name="jdbc/digweb223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digwebbal"
+            name="jdbc/digwebbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb221"
+            name="jdbc/digweb221"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax64"
+            name="jdbc/imax64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax221"
+            name="jdbc/imax221"
+            type="javax.sql.DataSource"/>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+        </Context>
+        
+        <Context
+            path="/security">
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <Listener className="org.apache.catalina.startup.TldConfig"/>
+          <ResourceLink
+            global="jdbc/imax223"
+            name="jdbc/imax223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax65"
+            name="jdbc/imax65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/poolimax"
+            name="jdbc/poolimax"
+            type="oracle.jdbc.pool.OracleDataSource"/>
+          <ResourceLink
+            global="jdbc/digweb64"
+            name="jdbc/digweb64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imaxbal"
+            name="jdbc/imaxbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/poolimax1"
+            name="jdbc/poolimax1"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb65"
+            name="jdbc/digweb65"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb223"
+            name="jdbc/digweb223"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digwebbal"
+            name="jdbc/digwebbal"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/digweb221"
+            name="jdbc/digweb221"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax64"
+            name="jdbc/imax64"
+            type="javax.sql.DataSource"/>
+          <ResourceLink
+            global="jdbc/imax221"
+            name="jdbc/imax221"
+            type="javax.sql.DataSource"/>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+          <WatchedResource>/usr/share/tomcat5/conf/context.xml</WatchedResource>
+        </Context>
+      </Host>
+    </Engine>
+  </Service>
+</Server>

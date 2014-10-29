@@ -1,0 +1,24 @@
+<!-- The contents of this file will be loaded for each web application -->
+<Context>
+
+    <!-- Default set of monitored resources -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+	
+    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+    <!--
+    <Manager pathname="" />
+    -->
+
+<ResourceLink global="jdbc/imax221" name="jdbc/imax221" type="javax.sql.DataSource"/>
+<ResourceLink global="jdbc/imax223" name="jdbc/imax223" type="javax.sql.DataSource"/> 
+<ResourceLink global="jdbc/imax64" name="jdbc/imax64" type="javax.sql.DataSource"/> 
+<ResourceLink global="jdbc/imax65" name="jdbc/imax65" type="javax.sql.DataSource"/> 
+<ResourceLink global="jdbc/imaxbal" name="jdbc/imaxbal" type="javax.sql.DataSource"/>  
+<ResourceLink global="jdbc/digweb221" name="jdbc/digweb221" type="javax.sql.DataSource"/>
+<ResourceLink global="jdbc/digweb223" name="jdbc/digweb223" type="javax.sql.DataSource"/> 
+<ResourceLink global="jdbc/digweb64" name="jdbc/digweb64" type="javax.sql.DataSource"/> 
+<ResourceLink global="jdbc/digweb65" name="jdbc/digweb65" type="javax.sql.DataSource"/> 
+<ResourceLink global="jdbc/digwebbal" name="jdbc/digwebbal" type="javax.sql.DataSource"/>  
+<ResourceLink global="jdbc/digcen64" name="jdbc/digcen64" type="javax.sql.DataSource"/> 
+<ResourceLink global="jdbc/digcen65" name="jdbc/digcen65" type="javax.sql.DataSource"/>  
+</Context>

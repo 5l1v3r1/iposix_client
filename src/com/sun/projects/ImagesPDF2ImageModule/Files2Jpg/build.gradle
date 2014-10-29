@@ -1,0 +1,53 @@
+
+apply {
+    plugin 'java'
+    plugin 'application'
+    plugin 'maven'
+   
+}
+
+mainClassName = projectMainClass
+
+repositories {
+    
+    maven {
+        url internalRepository
+        
+        credentials {
+            username archivaUser
+            password archivaPassword
+        }
+    }
+}
+
+
+
+dependencies {
+        
+    compile "org.apache.pdfbox:pdfbox:$pdfboxVersion"
+            
+    runtime "org.apache.pdfbox:pdfbox:$pdfboxVersion"
+         
+}
+ 
+
+javadoc {
+    options.encoding = projectEncoding
+}
+ 
+task javadocJar(type: Jar, dependsOn: 'javadoc') {
+    classifier = 'javadoc'
+
+    from javadoc.destinationDir
+}
+ 
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+ 
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}

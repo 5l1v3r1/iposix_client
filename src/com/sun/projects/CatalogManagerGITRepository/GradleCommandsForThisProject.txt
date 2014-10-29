@@ -1,0 +1,210 @@
+gradle clean build jettyRun --stacktrace -x:test -x:javadocJar -x:sourcesJar -x:war
+
+gradle clean build --stacktrace -x:javadocJar -x:sourcesJar -x:war
+
+http://localhost:8080/bocrw-catalog-manager/api/restdoc.html
+
+git config --global http.proxy http://BANCOAZTECA\\B249461:Gruposalinas249@10.50.8.21:8080
+curl -x http://10.50.8.21:8080 --proxy-user BANCOAZTECA\\B249461:Gruposalinas249 -L http://twitter.com/statuses/public_timeline.
+xml
+
+Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("my.proxy.example.com", 3128));
+URLConnection yc = url.openConnection(proxy);
+
+Authenticator.setDefault(new Authenticator() {
+
+        @Override
+        protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("login", "password".toCharArray());
+        }
+});
+
+ 
+ git config --global user.name "Your Name"
+ git config --global user.email you@example.com
+
+er doing this, you may fix the identity used for this commit with:
+
+ git commit --amend --reset-author
+
+****************************************************************************************
+
+  'Accept': 'application/json',
+  'Content-Type': 'application/json' 
+
+****************************************************************************************
+
+java 1.5
+tomcat 5
+
+10.51.230.89 connections pool file
+root
+digital
+22
+
+642928
+
+http://10.51.230.89/img23/digitalizacion_web/2013/06/11/CREDITO/100/100-0-0/709/820008.jpg
+
+http://10.51.230.89/img10/digitalizacion_web/2014/10/20/OPERACAPTA/1-51-5997-3915-1-51-5997-3915-8488/1-51-5997-3915-1-51-5997-3915-8488-1-6/709/120001.tiff
+
+http://localhost:8080/DigVisorWeb/visor.jsp?llave=1-51-5997-3915-1-51-5997-3915-8488&producto=operacapta&verifica=2313028&idTraceTF=V
+
+
+
+*******************************************************************************************
+
+@Override
+    public String toString() {
+
+            StringBuilder printPaginas = new StringBuilder();
+
+            printPaginas
+                            .append("================================================================");
+            printPaginas.append("\r\n");
+            printPaginas.append("Documento      : " + NombreDocumento);
+            printPaginas.append("\r\n");
+            printPaginas.append("Id Documento   : " + IdDocImx);
+            printPaginas.append("\r\n");
+            printPaginas.append("DocImx         : " + DocImx);
+            printPaginas.append("\r\n");
+            printPaginas.append("Estatus        : " + Status);
+            printPaginas.append("\r\n");
+            printPaginas.append("Subproducto    : " + Subproducto);
+            printPaginas.append("\r\n");
+            printPaginas.append("Etapa          : " + Etapa);
+            printPaginas.append("\r\n");
+            printPaginas.append("No. Paginas    : " + numeroPaginas);
+            printPaginas.append("\r\n");
+            printPaginas
+                            .append("----------------------------------------------------------------");
+            printPaginas.append("\r\n");
+            printPaginas
+                            .append("----------------------------------------------------------------");
+            printPaginas.append("\r\n");
+
+            for (Pagina p : Paginas) {
+                    printPaginas.append(p.getNoPagina());
+                    printPaginas.append("  ");
+                    printPaginas.append(p.getNombreDocumento());
+                    printPaginas.append("  ");
+                    printPaginas.append(p.getIdDocImx());
+                    printPaginas.append("  ");
+                    printPaginas.append(p.getDocImx());
+                    printPaginas.append("  ");
+                    printPaginas.append(p.getRutaHtmlImagen());
+                    printPaginas.append("\r\n");
+                    printPaginas.append(p.getNombreImagen());
+                    printPaginas.append("\r\n");
+                    printPaginas.append(p.getStatusImx());
+                    printPaginas.append("\r\n");
+                    printPaginas.append(p.getSubproducto());
+                    printPaginas.append("\r\n");
+                    printPaginas.append(p.getEtapa());
+                    printPaginas.append("\r\n");
+                    printPaginas.append(p.getUsuarioImx());
+                    printPaginas.append("\r\n");
+                    printPaginas.append(p.getWorkStationImx());
+                    printPaginas.append("\r\n");
+                    printPaginas.append(p.getFechDigiImagen());
+                    printPaginas.append("\r\n");
+            }
+            printPaginas.append("\r\n");
+            printPaginas.append("================================================================");
+
+            return printPaginas.toString();
+
+    }
+
+*********************************************************************************************************************
+
+@Override
+    public String toString() {
+
+        StringBuilder printDocumentos = new StringBuilder();
+
+        printDocumentos.append("=============================================");
+        printDocumentos.append("\r\n");
+        printDocumentos.append("Producto           : " + Appimx);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("Expimx		       : " + Expimx);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX01              : " + Imx01);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX02              : " + Imx02);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX03              : " + Imx03);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX04              : " + Imx04);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX05              : " + Imx05);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX06              : " + Imx06);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX07              : " + Imx07);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX08              : " + Imx08);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX09              : " + Imx09);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX10              : " + Imx10);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX11              : " + Imx11);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX12              : " + Imx12);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX13              : " + Imx13);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX14              : " + Imx14);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX15              : " + Imx15);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX16              : " + Imx16);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX17              : " + Imx17);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX18              : " + Imx18);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX19              : " + Imx19);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("IMX20              : " + Imx20);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("Cliente Unico      : " + ClienteUnico);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("Alta Registro      : " + FechAltaRegistro);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("Actuali Registro   : " + FechModificaRegistro);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("No. Documentos     : " + numeroDoctos);
+        printDocumentos.append("\r\n");
+        printDocumentos.append("---------------------------------------------");
+        printDocumentos.append("\r\n");
+        printDocumentos.append("---------------------------------------------");
+        printDocumentos.append("\r\n");
+        
+        
+        for (Documento d : Documentos) {
+            printDocumentos.append(d.toString());
+           /*printDocumentos.append("  ");
+            printDocumentos.append(d.getNombreDocumento());
+            printDocumentos.append("  ");
+            printDocumentos.append(d.getIdDocImx());
+            printDocumentos.append("  ");
+            printDocumentos.append(d.getDocImx());
+            printDocumentos.append("  ");
+            printDocumentos.append(d.getStatus());
+            printDocumentos.append("  ");
+            printDocumentos.append(d.getSubproducto());
+            printDocumentos.append("  ");
+            printDocumentos.append(d.getEtapa());
+            printDocumentos.append("  ");
+            printDocumentos.append(d.getPaginas().size())
+            printDocumentos.append("\r\n");;*/
+        }
+        
+        printDocumentos.append("\r\n");
+        printDocumentos.append("=============================================");
+
+        return printDocumentos.toString();
+
+    }
