@@ -1,0 +1,115 @@
+body {
+	background: url('../media/fondo.jpg') repeat-x top;
+	background-color: #CCCCCC;
+    float:left;
+    width: 100%;
+	font-size: 100%;
+	font-family: Calibri, Tahoma, Verdana;
+	margin:0;
+	padding:0;
+
+}
+
+.tblCabezero{
+	width:100%;
+}
+
+.tituloCabezero{
+	background:url('../media/fondoTitulo.jpg') repeat-x top;
+	font-family: Calibri, Tahoma, Verdana;
+	font-size: 13px;
+	color:#FFFFFF;
+}
+
+
+.tblCabezero tr.gris td {
+    height:14px;
+    border:1px #4D4D4D solid;
+    background: #666666;
+    text-align:center;
+    font:Calibri, Tahoma, Verdana;
+    font-size:11px;
+    color: #F2F2F2;
+}
+
+.tblCabezero tr.grisclaro td {
+    height:14px;
+    border:1px #4D4D4D solid;
+    background: #999999;
+    text-align:center;
+    font:Calibri, Tahoma, Verdana;
+    font-size:11px;
+    color: #FCFCFC;
+}
+
+
+.tblPaginacion  {
+    height:14px;
+    text-align:center;
+    font:Calibri, Tahoma, Verdana;
+    font-size:12px;
+    color:#666666;
+}
+
+#documentos{
+	width:250px;
+	height:500px;
+	overflow:auto;
+	border:3px solid #FFFFFF;
+	float:left;
+	background:#EBEBEB;
+	white-space:nowrap;
+}
+
+#aceptar{
+	width:250px;
+	height:20px;
+	vertical-align:middle;
+	text-align:left;
+	float:left;
+}
+
+
+#ayuda{
+	width:250px;
+	height:25px;
+}
+
+#imageContainer{
+ background:url('../media/logo.png') no-repeat top;
+ height:500px;
+}
+
+.tblPrincipal{
+	width:100%;
+	height:100%;
+	vertical-align:top;
+}
+
+
+.txtProducto  {
+    font:Calibri, Tahoma, Verdana;
+    font-size:14px;
+    color: #333333;
+}
+
+.txtDocumento {
+    font:Calibri, Tahoma, Verdana;
+    font-size:12px;
+    color: #666666;
+}
+
+
+.txtmsgAlerta{
+
+	font:Calibri, Tahoma, Verdana;
+    font-size:18px;
+    color: #01839A;
+
+}
+
+.txtServidor{
+	font:Calibri, Tahoma, Verdana;
+    font-size:12px;
+    color: #EBEBEB;
+}

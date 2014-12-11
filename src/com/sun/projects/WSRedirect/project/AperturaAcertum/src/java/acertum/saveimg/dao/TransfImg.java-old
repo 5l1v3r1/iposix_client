@@ -1,0 +1,151 @@
+/**
+ * 
+ */
+package acertum.saveimg.dao;
+
+import acertum.saveimg.dto.InsTresTablasDto;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
+import javax.imageio.ImageIO;
+
+
+
+import com.oreilly.servlet.Base64Decoder;
+
+
+
+//import sun.misc.BASE64Decoder;
+
+public class TransfImg {
+	private String codigoError;
+   
+
+    public TransfImg() {
+      
+    }
+
+    public boolean creaImg(InsTresTablasDto entradas) {
+        boolean codigo = false;
+
+        imprimeService(entradas);
+
+        try {
+            byte[] imgByte = null;
+            InputStream input = null;
+
+            imgByte = Base64Decoder.decodeToBytes(entradas.getImagen64());
+            input = new ByteArrayInputStream(imgByte);
+            File tempfile = File.createTempFile("temp", ".jpg");
+            //String nombtemp =  tempfile.getName();
+            tempfile.deleteOnExit();
+            FileOutputStream fos = new FileOutputStream(tempfile);
+            fos.write(imgByte);
+            fos.close();
+            entradas.setTamImagen(String.valueOf(tempfile.length())); 
+            if (isImagenValida(input)) {
+                RutaDao insertPagina = new RutaDao();
+                insertPagina.insertarRegistroTresTablas(entradas);
+
+                
+                
+                if (verificaDir(entradas.getPath())) {
+                    File fichero = new File(entradas.getRuta());
+                    System.out.println(entradas.getPath());
+                    System.out.println(entradas.getRuta());
+                    
+                    FileOutputStream salida = new FileOutputStream(fichero);
+                    salida.write(imgByte);
+                    salida.close();
+                    codigo = true;
+                } else {
+                    codigoError = "Error - {Problemas al crear el directorio / No se encuentra el directorio}";
+                }
+            } else {
+                codigoError = "Error - La imagen No es valida, {Alto o Ancho con valor 0 / Imagen Da�ada}";
+                
+            }
+            tempfile.delete();
+        } catch (Exception e) {
+            System.out.println("TransferenciaService.creaImg  Exception : " + e.getMessage());
+            e.printStackTrace();
+            
+        } finally {
+            return codigo;
+          
+        }
+    }
+
+    /**
+     * @return the codigoError
+     */
+    public String getCodigoError() {
+        return codigoError;
+    }
+
+    public boolean isImagenValida(InputStream input) {
+        boolean codigo = false;
+        int width = 0;
+        int height = 0;
+        try {
+            BufferedImage digImageaValidar = ImageIO.read(input);
+            width = digImageaValidar.getWidth();
+            height = digImageaValidar.getHeight();
+
+            if (width > 0 && height > 0) {
+                codigo = true;
+            }
+        } catch (Exception e) {
+            System.out.println("TransferenciaHelper.isImagenValida Exception" + e.getMessage());
+        } finally {
+            return codigo;
+        }
+    }
+
+    public boolean verificaDir(String rutaShared) {
+        boolean codigo = false;
+        File directorio = new File(rutaShared);
+        Process proc0 = null;
+        try {
+            if (!directorio.exists()) {
+//   String ejA = "mkdir -m777 -p " + rutaShared;
+//                proc0 = Runtime.getRuntime().exec(ejA);
+//                proc0.waitFor();
+               codigo = true;
+            	//;
+            	directorio.mkdirs();
+                if (!codigo) {
+                    System.out.println("TransferenciaHelper.verificaDir {Problemas al crear el directorio }" + rutaShared);
+                }
+            } else {
+                codigo = directorio.exists();
+            }
+        } catch (Exception e) {
+            System.out.println("TransferenciaHelper.verificaDir Exception " + e.toString());
+        }
+        return codigo;
+    }
+
+    public void imprimeService(InsTresTablasDto entradas) {
+
+        System.out.println("#################################################################");
+        System.out.println("imagen64 : " + entradas.getImagen64());
+        System.out.println("clienteUnico.getPais " + entradas.getIdPais());
+        System.out.println("clienteUnico.getCanal " + entradas.getIdCanal());
+        System.out.println("clienteUnico.getSucursal " + entradas.getIdSucursal());
+        System.out.println("clienteUnico.getFolio " + entradas.getIdFolio());
+        System.out.println("Producto :" + entradas.getIdProducto());
+        System.out.println("Tipo de Documento :" + entradas.getIdTipoDocto());
+        System.out.println("Tama�o :" + entradas.getTamImagen() + "k");
+        System.out.println("workstation :" + entradas.getWorkstation());
+        //System.out.println("Gabinete :" + entradas.getIdGabinete());
+        System.out.println("empleado :" + entradas.getUsuario());
+        System.out.println("#################################################################");
+    }
+}

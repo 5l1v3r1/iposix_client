@@ -1,0 +1,55 @@
+
+apply {
+    plugin 'java'
+    plugin 'application'
+    plugin 'maven'
+}
+
+mainClassName = projectMainClass
+
+repositories {   
+    mavenCentral()
+}
+
+
+
+dependencies {
+    // dbpool version 6.0 compatible with Java 7 and JDBC 4.1
+    compile "net.snaq:dbpool:$dbpoolVersion"
+    //oracle driver ojdbc6
+    compile "cn.guoyukun.jdbc:oracle-ojdbc6:$oracleVersion"
+    //quartz libraries
+    compile "org.quartz-scheduler:quartz:$quartsVersion"
+    //log4j
+    compile "log4j:log4j:$log4jVersion"
+    
+}
+
+jar {
+    manifest {
+        attributes("Implementation-Title" : projectName,
+                   "Implementation-Version" : projectVersion,
+                   "Main-Class" : projectMainClass)
+    }
+}
+
+javadoc {
+    options.encoding = projectEncoding
+}
+ 
+task javadocJar(type: Jar, dependsOn: 'javadoc') {
+    classifier = 'javadoc'
+
+    from javadoc.destinationDir
+}
+ 
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+ 
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
