@@ -1,0 +1,71 @@
+
+apply {
+    plugin 'java'
+    plugin 'application'
+    plugin 'maven'
+}
+
+mainClassName = projectMainClass
+
+repositories {   
+    mavenCentral()
+}
+
+
+
+dependencies {
+    // dbpool version 6.0 compatible with Java 7 and JDBC 4.1
+    compile "net.snaq:dbpool:$dbpoolVersion"
+    //oracle driver ojdbc6
+    compile "cn.guoyukun.jdbc:oracle-ojdbc6:$oracleVersion"
+    //quartz libraries
+    compile "org.quartz-scheduler:quartz:$quartsVersion"
+    //log4j
+    compile "log4j:log4j:$log4jVersion"
+    //file utils
+    compile "org.apache.commons:commons-io:$fileUtilVersion"
+    //slf4j
+    compile "org.slf4j:slf4j-simple:$slf4jVersion"
+    
+}
+
+task allJar(type: Jar) {
+    
+    manifest {
+        attributes("Implementation-Title" : projectName,
+                   "Implementation-Version" : projectVersion,
+                   "Main-Class" : projectMainClass)
+    }
+    
+    baseName = project.name + '-all'
+    from files(sourceSets.main.output.classesDir)
+    from files(sourceSets.main.output.resourcesDir)
+    from { 
+        configurations.compile.collect { zipTree(it)}} {
+        //exclude "META-INF/*.SF"
+        //exclude "META-INF/*.DSA"
+        //exclude "META-INF/*.RSA"
+    }
+           
+}
+
+javadoc {
+    options.encoding = projectEncoding
+}
+ 
+task javadocJar(type: Jar, dependsOn: 'javadoc') {
+    classifier = 'javadoc'
+
+    from javadoc.destinationDir
+}
+ 
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+ 
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}

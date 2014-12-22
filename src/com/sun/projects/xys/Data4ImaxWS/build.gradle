@@ -1,0 +1,73 @@
+
+apply {
+    plugin 'java'
+    plugin 'maven'
+    plugin 'jetty'    
+    plugin 'war'
+}
+ 
+group = projectGroup
+archivesBaseName = projectWarBaseName
+version = projectVersion
+
+sourceCompatibility = projectSourceCompatibility
+targetCompatibility = projectTargetCompatibility
+ 
+[compileJava, compileTestJava]*.options*.encoding = projectEncoding
+ 
+ 
+repositories {
+    mavenCentral()
+}
+ 
+
+dependencies { 
+    providedCompile "javax.servlet:javax.servlet-api:$javaxServletVersion",
+                    "javax.ws.rs:jsr311-api:$jsr311Version",
+                    "javax:javaee-api:$javaeeVersion"
+        
+    compile "org.springframework:spring-webmvc:$springFrameworkVersion",
+            "org.springframework:spring-core:$springFrameworkVersion",
+            "org.springframework:spring-context:$springFrameworkVersion",
+            "org.springframework.security:spring-security-web:$springSecurityVersion",
+            "org.springframework.security:spring-security-config:$springSecurityVersion",
+            "org.springframework.ws:spring-ws-core:$springWsVersion",
+    
+            "org.jvnet.jax-ws-commons.spring:jaxws-spring:$jaxwsSpringVersion",
+    
+            "com.fasterxml.jackson.core:jackson-core:$jacksonVersion",
+            "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion",
+            "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+    
+            "log4j:log4j:$log4jVersion",
+
+            "org.jsondoc:jsondoc-core:$jsondocSpringMvcVersion",
+            "org.jsondoc:jsondoc-springmvc:$jsondocSpringMvcVersion"
+            
+    runtime "javax.servlet:jstl:$jstlVersion",
+            "com.sun.xml.ws:jaxws-rt:$jaxwsrtVersion"
+ 
+    testCompile "junit:junit:$junitVersion",
+                "org.springframework:spring-test:$springFrameworkVersion"           
+}
+
+javadoc {
+    options.encoding = projectEncoding
+}
+ 
+task javadocJar(type: Jar, dependsOn: 'javadoc') {
+    classifier = 'javadoc'
+
+    from javadoc.destinationDir
+}
+ 
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+ 
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}

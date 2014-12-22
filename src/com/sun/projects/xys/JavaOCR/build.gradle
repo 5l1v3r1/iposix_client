@@ -1,0 +1,49 @@
+apply {
+    plugin 'java'
+    plugin 'application'
+}
+ 
+group = projectGroup
+archivesBaseName = projectWarBaseName
+version = projectVersion
+
+mainClassName = projectMainClass
+
+sourceCompatibility = projectSourceCompatibility
+targetCompatibility = projectTargetCompatibility
+ 
+[compileJava, compileTestJava]*.options*.encoding = projectEncoding
+ 
+ 
+repositories {
+    mavenCentral()
+}
+ 
+
+dependencies {
+                  
+    compile files('libs/JavaOCR.jar')
+                    
+    runtime files('libs/JavaOCR.jar')
+}
+
+javadoc {
+    options.encoding = projectEncoding
+}
+ 
+task javadocJar(type: Jar, dependsOn: 'javadoc') {
+    classifier = 'javadoc'
+
+    from javadoc.destinationDir
+}
+ 
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+ 
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}

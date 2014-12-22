@@ -1,0 +1,49 @@
+apply {
+    plugin 'java'
+    plugin 'application'
+}
+
+mainClassName = projectMainClass
+
+sourceCompatibility = projectSourceCompatibility
+targetCompatibility = projectTargetCompatibility
+ 
+[compileJava, compileTestJava]*.options*.encoding = projectEncoding
+ 
+ 
+repositories {
+    mavenCentral()
+}
+ 
+
+dependencies {
+                    
+    compile files('libs/jai_imageio.jar'),
+            files('libs/jna-4.1.0.jar'),
+            files('libs/tess4j.jar')
+                    
+    runtime files('libs/jai_imageio.jar'),
+            files('libs/jna-4.1.0.jar'),
+            files('libs/tess4j.jar')
+}
+
+javadoc {
+    options.encoding = projectEncoding
+}
+ 
+task javadocJar(type: Jar, dependsOn: 'javadoc') {
+    classifier = 'javadoc'
+
+    from javadoc.destinationDir
+}
+ 
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+ 
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
